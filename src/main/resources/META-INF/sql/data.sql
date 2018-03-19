@@ -1,4 +1,4 @@
-insert into users (username, email, enabled, password, sex) value("irek", "irek@gmail.com", true, "irek", "male");
+insert into users (username, email, enabled, password, sex) value("irek", "irekbdhbhdbbdkbckbckdbhbchcbdchdcbchcbhcb@gmail.com", true, "irek", "male");
 insert into users (username, email, enabled, password, sex) value("monika", "monika@gmail.com", true, "monika", "female");
 
 insert into roles(name, username) value("ROLE_ADMIN", "irek");

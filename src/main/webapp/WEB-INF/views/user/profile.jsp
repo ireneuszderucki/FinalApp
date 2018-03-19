@@ -11,34 +11,36 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/my.css"/>">
 </head>
 <body>
-<%@ include file="../fragments/bar.jspf"%>
+	<%@ include file="../fragments/bar.jspf"%>
 	<c:choose>
 		<c:when test="${user.sex=='female'}">
-			<div class="divParent">
-				<div class="w3-card-4 divChild">
-					<img
-						src="<c:url value="/resources/images/user_avatar_female.jpg" />"
-						style="width: 100%; height: 100%;" alt="Norway">
-					<div class="w3-container w3-center">
-						<p class="xSmallP">${user.username}</p>
-						<p class="xSmallP">${user.email}</p>
-					</div>
+			<div class="w3-card-4 userProfile">
+				<img
+					src="<c:url value="/resources/images/user_avatar_female.jpg" />"
+					alt="female-avatar">
+				<div class="w3-container w3-center">
+					<p class="xSmallP">${user.username}</p>
+					<p class="xSmallP">${user.email}</p>
 				</div>
 			</div>
 		</c:when>
 		<c:otherwise>
-			<div class="divParent">
-				<div class="w3-card-4 divChild">
-					<img src="<c:url value="/resources/images/user_avatar.png" />"
-						style="width: 100%; height: 100%;" alt="Norway">
-					<div class="w3-container w3-center">
-						<p class="xSmallP">${user.username}</p>
-						<p class="xSmallP">${user.email}</p>
-					</div>
+			<div class="w3-card-4 userProfile">
+				<img src="<c:url value="/resources/images/user_avatar.png" />"
+					alt="male avatar">
+				<div class="w3-container w3-center">
+					<p class="xSmallP">${user.username}</p>
+					<p class="xSmallP">${user.email}</p>
 				</div>
 			</div>
 		</c:otherwise>
 	</c:choose>
-	<%@ include file="../fragments/script.jspf"%>
+
+	<%@ include file="../fragments/footer.jspf"%>
+
+	<script type="text/javascript"
+		src="<c:url value="/resources/js/jquery-3.3.1.min.js"/>"></script>
+	<script type="text/javascript"
+		src="<c:url value="/resources/js/eventsForSidebar.js"/>"></script>
 </body>
 </html>

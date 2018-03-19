@@ -1,7 +1,7 @@
-<div class="w3-lime w3-sidebar w3-bar-block w3-card w3-animate-left"
+	<div class="w3-lime w3-sidebar w3-bar-block w3-card w3-animate-left"
 		style="display: none;" id="mySidebar">
-		<button class="w3-bar-item w3-button w3-small" onclick="w3_close()">Close
-			&times;</button>
+		<button class="w3-bar-item w3-button w3-small">Close &times;
+		</button>
 		<a href="/FinalApp/home/hello"	class="w3-bar-item w3-button">Home</a>
 		<a href="/FinalApp/company/list" class="w3-bar-item w3-button">Companies</a> 
 		<a href="/FinalApp/offers/yourOffers" class="w3-bar-item w3-button">Job offers</a>
@@ -13,6 +13,6 @@
 	<div id="main">
 
 		<div class="w3-teal" style="height:60px;">
-			<h4><button style="margin-right:60px;"id="openNav" class="w3-button w3-teal w3-large"
-				onclick="w3_open()">&#9776;</button>Haven't you seen any cats around here?</h4>
+			<h4><button style="margin-right:60px;"id="openNav" class="w3-button w3-teal w3-large">&#9776;</button>
+			Haven't you seen any cats around here?</h4>
 		</div>

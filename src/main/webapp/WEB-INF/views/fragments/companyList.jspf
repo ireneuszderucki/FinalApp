@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
+<div>
  <h5><strong>COMPANIES YOU APPLIED TO</strong></h5>
   <table class="w3-table-all xSmallP">
     <tr>
@@ -19,10 +20,9 @@
         <tr>
             <td>${company.name}</td>
             <td>${company.location}</td>
-            <%-- <td><a href="edit/${user.id}" class="w3-button w3-orange">Edit</a></td>
-            <td><a href="delete/${user.id}" class="w3-button w3-red">Delete</a></td> --%>
         </tr>
     </c:forEach>
   </table>
+  </div>
 </body>
 </html>
