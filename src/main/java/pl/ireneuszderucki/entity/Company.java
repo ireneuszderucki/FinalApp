@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.groups.Default;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -23,7 +24,7 @@ public class Company {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotBlank
+	@NotBlank(groups = Default.class)
 	private String name;
 	
 	private String description;

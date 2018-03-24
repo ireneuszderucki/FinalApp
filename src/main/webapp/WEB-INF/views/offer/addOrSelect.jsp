@@ -27,7 +27,7 @@
 	</div>
 	
 	<div style="margin-bottom:80px">
-		<f:form method="post" action="/FinalApp/company/add" modelAttribute="company"
+		<f:form method="post" action="/FinalApp/offers/addNowAndCompany" modelAttribute="company"
 			class="w3-container" >
 			
 			<div class="w3-card-4 w3-light-green" style="width: 65%; margin: auto; margin-top:20px;">

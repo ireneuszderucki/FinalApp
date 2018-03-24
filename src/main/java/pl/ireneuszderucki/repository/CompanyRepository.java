@@ -10,5 +10,7 @@ import pl.ireneuszderucki.entity.Company;
 public interface CompanyRepository extends JpaRepository<Company, Long> {
 	@Query("SELECT c FROM Company c, JobOffer jo WHERE c=jo.company AND jo.user.username=?1")
 	List<Company> searchUsername(String username);
+	
+	Company findByName(String name);
 }
 

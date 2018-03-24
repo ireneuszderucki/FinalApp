@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 div {
-	border:solid;
+	/* border:solid; */
 }
 
 img {
@@ -11,6 +11,7 @@ img {
 .userProfile {
 	width: 15%;
 	margin: 3%;
+	margin-bottom: 6%;
 	float: left;
 }
 
@@ -30,7 +31,25 @@ img {
 	margin: 50px;
 }
 
+.com {
+	width: 20%;
+	margin-left: 3%;
+	clear: left;
+	float:left;
+	border-radius: 25px;
+	padding: 10px;
+	background-color: #edc951;
+}
 
+.offer {
+	float:left;
+	width:40%;
+	margin-left: 3%;
+	margin-bottom: 10%;
+	border-radius: 25px;
+	padding: 10px;
+	background-color: #eb6841;
+}
 
 
 
@@ -52,8 +71,14 @@ body {
 }
 
 .xSmallP {
-	font-size: x-small;
+	font-size: small;
 	overflow-wrap: break-word;
+	font-family: "Stonewash", serif;
+}
+
+.smallP {
+	font-size: medium;
+	font-family: "Stonewash", serif;
 }
 
 .divList {

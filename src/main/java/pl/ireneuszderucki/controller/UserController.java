@@ -25,4 +25,11 @@ public class UserController {
 		model.addAttribute("user", user);
 		return "user/profile";
 	}
+	
+	@GetMapping("/user/details")
+	private String goToUserProfileDetails(Model model) {
+		User user = userRepository.findByUsername(usernameService.getUserUsername());
+		model.addAttribute("user", user);
+		return "user/profileDetails";
+	}
 }

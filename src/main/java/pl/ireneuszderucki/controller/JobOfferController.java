@@ -12,13 +12,14 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import pl.ireneuszderucki.beans.NoValidationJobOfferGroup;
 import pl.ireneuszderucki.entity.Company;
 import pl.ireneuszderucki.entity.JobOffer;
 import pl.ireneuszderucki.entity.User;
@@ -85,11 +86,25 @@ public class JobOfferController {
 	}
 	
 	@PostMapping("/addNow")
-	private String addNowOffer(Model model) {
-		JobOffer jobOffer = new JobOffer();
+	private String addNowOffer(Model model, @Validated({NoValidationJobOfferGroup.class}) JobOffer jobOffer) {
 		model.addAttribute("jobOffer", jobOffer);
 		return "offer/add";
 	}
+	
+	@PostMapping("/addNowAndCompany")
+	private String addNowOfferAndCompany(Model model, @Valid Company company, BindingResult bresult) {
+		if(bresult.hasErrors()) {
+			return null;
+		}
+		companyRepository.saveAndFlush(company);
+		String companyName = company.getName();
+		Company companyTemp = companyRepository.findByName(companyName);
+		JobOffer jobOffer = new JobOffer();
+		jobOffer.setCompany(companyTemp);
+		model.addAttribute("jobOffer", jobOffer);
+		return "offer/add";
+	}
+	
 	
 	@GetMapping("/addNow")
 	private String addNowOfferGet(Model model) {

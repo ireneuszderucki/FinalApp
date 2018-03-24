@@ -12,21 +12,17 @@
 	<%@ include file="../fragments/bar.jspf"%>
 	<%@ include file="../fragments/profile.jspf"%>
 	<%@ include file="../fragments/btns.jspf"%>
-		
-		
-		<div class="divList" style="clear:left;">COMPANIES YOU APPLIED TO
-			<%@ include file="../fragments/companyList.jspf"%>
-		</div>
+	<%@ include file="../fragments/companyList.jspf"%>
+	
 
-		<div class="divList" style="margin-bottom: 100px">
-			<%@ include file="../fragments/offerList.jspf"%>
-		</div>
+	<%@ include file="../fragments/offerList.jspf"%>
 
-		<%@ include file="../fragments/footer.jspf"%>
-		
-		<script type="text/javascript"
+
+	<%@ include file="../fragments/footer.jspf"%>
+
+	<script type="text/javascript"
 		src="<c:url value="/resources/js/jquery-3.3.1.min.js"/>"></script>
-		<script type="text/javascript"
+	<script type="text/javascript"
 		src="<c:url value="/resources/js/eventsForSidebar.js"/>"></script>
 </body>
 </html>

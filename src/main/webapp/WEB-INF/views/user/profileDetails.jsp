@@ -9,9 +9,9 @@
 <title>Your profile</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="<c:url value="/resources/css/my.css"/>">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Stonewash">
 </head>
 <body>
+	<%@ include file="../fragments/bar.jspf"%>
 	<c:choose>
 		<c:when test="${user.sex=='female'}">
 			<div class="w3-card-4 userProfile">
@@ -35,5 +35,12 @@
 			</div>
 		</c:otherwise>
 	</c:choose>
+
+	<%@ include file="../fragments/footer.jspf"%>
+
+	<script type="text/javascript"
+		src="<c:url value="/resources/js/jquery-3.3.1.min.js"/>"></script>
+	<script type="text/javascript"
+		src="<c:url value="/resources/js/eventsForSidebar.js"/>"></script>
 </body>
 </html>
