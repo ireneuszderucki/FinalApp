@@ -9,7 +9,6 @@
 <title>Your profile</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="<c:url value="/resources/css/my.css"/>">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Stonewash">
 </head>
 <body>
 	<c:choose>

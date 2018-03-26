@@ -10,7 +10,8 @@ img {
 
 .userProfile {
 	width: 15%;
-	margin: 3%;
+	margin-top: 3%;
+	margin-left: 3%;
 	margin-bottom: 6%;
 	float: left;
 }
@@ -33,6 +34,7 @@ img {
 
 .com {
 	width: 20%;
+	max-width: 40%;
 	margin-left: 3%;
 	clear: left;
 	float:left;
@@ -51,7 +53,11 @@ img {
 	background-color: #eb6841;
 }
 
-
+.sticky {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 
 
 
@@ -60,6 +66,7 @@ img {
 
 body {
     background-color: lightblue;
+    margin: 0;
 }
 
 .divParent {
@@ -73,12 +80,10 @@ body {
 .xSmallP {
 	font-size: small;
 	overflow-wrap: break-word;
-	font-family: "Stonewash", serif;
 }
 
 .smallP {
 	font-size: medium;
-	font-family: "Stonewash", serif;
 }
 
 .divList {

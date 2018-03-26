@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" http-equiv="Content-Type" content="width=device-width, initial-scale=1">
 <title>Companies</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="<c:url value="/resources/css/my.css"/>">
@@ -13,7 +13,7 @@
 <body>
 	<div class="com">
 	<p class="w3-center"><strong>COMPANIES YOU APPLIED TO</strong></p>
-		<table class="w3-table-all w3-hoverable smallP">
+		<table class="w3-table-all w3-hoverable smallP" style="max-width:100%;">
 			<tr class="w3-red">
 				<th>Name</th>
 				<th>Location</th>

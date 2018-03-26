@@ -13,7 +13,7 @@
 <body>
 	<%@ include file="../fragments/bar.jspf"%>
 
-	<div style="margin-bottom:80px">
+	<div style="margin-bottom:80px;margin-top:3%;">
 		<f:form method="post" action="/FinalApp/offers/addNow" modelAttribute="jobOffer"
 			class="w3-container" >
 			
@@ -52,10 +52,10 @@
 		</f:form>
 	</div>
 	<%@ include file="../fragments/footer.jspf"%>
+
 	<script type="text/javascript"
 		src="<c:url value="/resources/js/jquery-3.3.1.min.js"/>"></script>
 	<script type="text/javascript"
-		src="<c:url value="/resources/js/textarea.js"/>"></script>
-		<%@ include file="../fragments/script.jspf"%>
+		src="<c:url value="/resources/js/eventsForSidebar.js"/>"></script>
 </body>
 </html>

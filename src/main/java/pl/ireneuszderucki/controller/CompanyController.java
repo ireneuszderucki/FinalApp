@@ -39,6 +39,11 @@ public class CompanyController {
 		return users;
 	}
 
+	/**
+	 * creates empty Company obj and transfers it to a view via Model
+	 * @param model
+	 * @return company/add view
+	 */
 	@GetMapping("/add")
 	private String addCompany(Model model) {
 		Company company = new Company();

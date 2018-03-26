@@ -19,7 +19,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import pl.ireneuszderucki.beans.ContractTypeService;
+import pl.ireneuszderucki.beans.LocationService;
 import pl.ireneuszderucki.beans.NoValidationJobOfferGroup;
+import pl.ireneuszderucki.beans.RetrieveUsername;
 import pl.ireneuszderucki.entity.Company;
 import pl.ireneuszderucki.entity.JobOffer;
 import pl.ireneuszderucki.entity.User;
@@ -40,6 +43,16 @@ public class JobOfferController {
 	@Autowired
 	private UserRepository userRepository;
 	
+	@Autowired
+	private LocationService locationService;
+	
+	@Autowired
+	private ContractTypeService contractTypeService;
+	
+	@Autowired
+	private RetrieveUsername usernameService;
+	
+	
 	@ModelAttribute("companies")
 	private List<Company> allCompanies() {
 		List<Company> companies = new ArrayList<>();
@@ -49,29 +62,13 @@ public class JobOfferController {
 	
 	@ModelAttribute("contractTypes")
 	private List<String> contractTypes() {
-		List<String> contractTypes = new ArrayList<>();
-		contractTypes.add("Contract of employment");
-		contractTypes.add("Fee-for-task agreement");
-		contractTypes.add("B2B");
+		List<String> contractTypes = contractTypeService.getContractTypes();
 		return contractTypes;
 	}
 	
 	@ModelAttribute("locations")
 	private List<String> locations() {
-		List<String> locations = new ArrayList<>();
-		locations.add("Warszawa");
-		locations.add("Krakow");
-		locations.add("Lodz");
-		locations.add("Wroclaw");
-		locations.add("Poznan");
-		locations.add("Gdańsk");
-		locations.add("Gdynia");
-		locations.add("Sopot");
-		locations.add("Szczecin");
-		locations.add("Katowice");
-		locations.add("Kielce");
-		locations.add("Zielona Gora");
-		locations.add("Rzeszow");
+		List<String> locations = locationService.getLocations();
 		return locations;
 	}
 	
@@ -115,27 +112,22 @@ public class JobOfferController {
 	
 	@GetMapping("/yourOffers")
 	private String showOffers(Model model) {
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		if (!(authentication instanceof AnonymousAuthenticationToken)) {
-			String currentUserName = authentication.getName();
-			List<JobOffer> offers = jobOfferRepository.findByUserUsername(currentUserName);
-			model.addAttribute("offers", offers);
-			return "offer/list";
-		}
-		return null;
+		List<JobOffer> offers = jobOfferRepository.findByUserUsername(usernameService.getUserUsername());
+		model.addAttribute("offers", offers);
+		return "offer/list";
+		
 	}
 	
 	@PostMapping("/add")
 	private String processForm(@Valid JobOffer jobOffer, BindingResult bresult) {
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		if (!(authentication instanceof AnonymousAuthenticationToken)) {
-			String currentUserName = authentication.getName();
-			User user = userRepository.findByUsername(currentUserName);
-			jobOffer.setUser(user);
-			jobOfferRepository.save(jobOffer);
-			return "redirect:/offers/yourOffers";
+		if(bresult.hasErrors()) {
+			return null;
 		}
-		return null;
+		User user = userRepository.findByUsername(usernameService.getUserUsername());
+		jobOffer.setUser(user);
+		jobOfferRepository.save(jobOffer);
+		return "redirect:/offers/yourOffers";
+		
 	}
 	
 	@GetMapping("/details/{id}")

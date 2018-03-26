@@ -14,7 +14,7 @@
 </head>
 <body>
 <%@ include file="../fragments/bar.jspf"%>
-	<div class="w3-card-4 w3-light-green" style="width: 65%; margin: auto; margin-top:20px;">
+	<div class="w3-card-4 w3-light-green" style="width: 65%; margin: auto; margin-top:5%;">
 		<div class="w3-container w3-center">
 			<p>${offer.company.name}:${offer.title}</p>
 		</div>
@@ -46,6 +46,11 @@
 				class="w3-button w3-red" style="width: 100%">Delete</a>
 		</div>
 	</div>
-	<%@ include file="../fragments/script.jspf"%>
+	<%@ include file="../fragments/footer.jspf"%>
+
+	<script type="text/javascript"
+		src="<c:url value="/resources/js/jquery-3.3.1.min.js"/>"></script>
+	<script type="text/javascript"
+		src="<c:url value="/resources/js/eventsForSidebar.js"/>"></script>
 </body>
 </html>

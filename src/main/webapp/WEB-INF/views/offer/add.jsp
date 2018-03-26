@@ -5,20 +5,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" http-equiv="Content-Type" content="text/html, charset=UTF-8, width=device-width, initial-scale=1">
 <title>Add offer</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="<c:url value="/resources/css/my.css"/>">
 </head>
 <body>
 	<%@ include file="../fragments/bar.jspf"%>
-	<div style="margin: 20px" class="w3-container w3-blue">
-		<h3 class="w3-center">Add a new job offer</h3>
+	<div style="margin-top: 20px" class="w3-container w3-blue">
+		<h4 class="w3-center"><strong>'Add a new job offer' form</strong></h4>
 	</div>
 	<br>
 
 	<div>
-		<f:form method="post" action="" modelAttribute="jobOffer"
+		<f:form method="post" action="/FinalApp/offers/add" modelAttribute="jobOffer"
 			class="w3-container">
 
 			<div class="w3-row-padding">
@@ -29,7 +29,7 @@
 				</div>
 				<div class="w3-third">
 					<label>Contact person</label>
-					<f:input class="w3-input" path="contactData" />
+					<f:input class="w3-input" path="contactData" required="required"/>
 					<f:errors path="contactData" />
 				</div>
 				<div class="w3-third">
@@ -40,14 +40,14 @@
 			</div>
 			<br>
 
-			<div>
+			<div class="w3-row-padding">
 				<label>Description</label>
 				<f:textarea class="w3-input w3-border textarea" maxlength="4000" path="description" />
 				<f:errors path="description" />
 			</div>
 			<br>
 
-			<div>
+			<div class="w3-row-padding">
 				<label>Select company location</label>
 				<f:select class="w3-select" path="location" items="${locations}" />
 				<f:errors path="location" />
@@ -82,7 +82,7 @@
 			</div>
 			<br>
 
-			<div>
+			<div class="w3-row-padding">
 				Is valid?
 				<f:checkbox class="w3-check" path="valid" />
 			</div>
@@ -97,17 +97,19 @@
 			</div>
 			<br>
 
-			<div>
-				<input class="w3-input" type="submit" value="Add offer to DB">
+			<div class="w3-container w3-green" style="border:solid;margin-bottom:40px;">
+				<input class="w3-input w3-green" type="submit" value="Add offer to DB" >
 			</div>
 
 		</f:form>
 	</div>
 	<%@ include file="../fragments/footer.jspf"%>
+
 	<script type="text/javascript"
 		src="<c:url value="/resources/js/jquery-3.3.1.min.js"/>"></script>
 	<script type="text/javascript"
+		src="<c:url value="/resources/js/eventsForSidebar.js"/>"></script>
+		<script type="text/javascript"
 		src="<c:url value="/resources/js/textarea.js"/>"></script>
-		<%@ include file="../fragments/script.jspf"%>
 </body>
 </html>
