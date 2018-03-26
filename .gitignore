@@ -1,9 +1,6 @@
 
 # Created by https://www.gitignore.io/api/java,linux,maven,eclipse,java-web,coffeescript
 
-### CoffeeScript ###
-*.js
-
 ### Eclipse ###
 
 .metadata
