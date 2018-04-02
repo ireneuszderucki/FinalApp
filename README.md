@@ -5,4 +5,8 @@ For now, it is 100% Java backend solution containing JSP views enriched with js.
 
 Technologies used: <strong>Spring Framework (MVC, Data-JPA, Security, ORM), Hibernate Framework, MySQL, HTML5, CSS, JSP, JavaScript, jQuery </strong>
 
+Please use the following credentials:<br>
+<strong>login: admin</strong><br>
+<strong>password: admin</strong><br>
+
 Further description coming soon..

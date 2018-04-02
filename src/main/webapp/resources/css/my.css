@@ -20,6 +20,7 @@ img {
 	max-width: 50%;
 	float:left;
 	margin-top: 3%;
+	margin-left: 4%;
 	padding:20px;
 }
 
@@ -41,6 +42,7 @@ img {
 	border-radius: 25px;
 	padding: 10px;
 	background-color: #edc951;
+	display: table;
 }
 
 .offer {
@@ -51,6 +53,7 @@ img {
 	border-radius: 25px;
 	padding: 10px;
 	background-color: #eb6841;
+	display: table;
 }
 
 .sticky {

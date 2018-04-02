@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/my.css"/>">
 </head>
 <body>
-	<div class="com">
+	<div class="com" >
 	<p class="w3-center"><strong>COMPANIES YOU APPLIED TO</strong></p>
 		<table class="w3-table-all w3-hoverable smallP" style="max-width:100%;">
 			<tr class="w3-red">
